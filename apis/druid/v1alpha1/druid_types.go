@@ -288,8 +288,11 @@ type DruidNodeSpec struct {
 	// Optional
 	ReadinessProbe *v1.Probe `json:"readinessProbe,omitempty"`
 
-	// Optional: StartupProbe for nodeSpec
+	// Optional: StartupProbe for nodeSpec, this field is deprecated use `startUpProbe` instead
 	StartUpProbes *v1.Probe `json:"startUpProbes,omitempty"`
+
+	// Optional: StartupProbe for nodeSpec
+	StartUpProbe *v1.Probe `json:"startUpProbe,omitempty"`
 
 	// Optional: Ingress Annoatations to be populated in ingress spec
 	IngressAnnotations map[string]string `json:"ingressAnnotations,omitempty"`

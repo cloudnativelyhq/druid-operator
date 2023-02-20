@@ -329,6 +329,11 @@ func (in *DruidNodeSpec) DeepCopyInto(out *DruidNodeSpec) {
 		*out = new(v1.Probe)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.StartUpProbe != nil {
+		in, out := &in.StartUpProbe, &out.StartUpProbe
+		*out = new(v1.Probe)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.IngressAnnotations != nil {
 		in, out := &in.IngressAnnotations, &out.IngressAnnotations
 		*out = make(map[string]string, len(*in))
